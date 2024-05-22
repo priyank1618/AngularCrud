@@ -1,0 +1,42 @@
+<form #pppform = "ngForm" (submit)="onSubmit(pppform)"
+[class.ppp] = "customservicename.formIsSubmit" novalidate>
+    <input type="hidden" name="paymentDetailId" [value]="customservicename.formofppp.paymentDetailId">
+    <div class="mb-3">
+
+    <label for="">Card Owner Name</label>
+    <input class="form-control" placeholder="Name of cardowner"
+     #cardOwnerName="ngModel"
+    name="cardOwnerName" required
+    [(ngModel)] = "customservicename.formofppp.cardOwnerName">
+    </div>
+   
+    <div class="mb-3">
+    <label for="">16 Digit Card Number</label>
+    <input class="form-control" placeholder="Num On Card"
+    maxlength="16" minlength="16"
+     #cardNumber="ngModel"
+    name="cardNumber" required
+    [(ngModel)] = "customservicename.formofppp.cardNumber">
+    </div>
+    <div class="row">
+        <div class="mb-3 col-6">
+            <label for="">Card Exp Date</label>
+            <input class="form-control" placeholder="MM/YY"
+             #expirationDate="ngModel" required minlength="5" maxlength="5"
+            name="expirationDate"
+            [(ngModel)] = "customservicename.formofppp.expirationDate">
+            </div>
+        <div class="mb-3 col-6">
+            <label for="">Security Num</label>
+            <input class="form-control" placeholder="CVV"
+             #securityCode="ngModel"
+            name="securityCode" required minlength="3" maxlength="3"
+             [(ngModel)] = "customservicename.formofppp.securityCode">
+            </div>
+           
+    </div>
+
+        <div class="d-grid">
+            <button class="btn btn-lg btn-success" type="submit">Submit</button>
+        </div>
+</form>

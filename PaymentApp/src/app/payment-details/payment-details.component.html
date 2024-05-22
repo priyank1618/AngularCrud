@@ -1,0 +1,28 @@
+<div class="bg-body-secondary text-center py-5 rounded-2">
+    <h1 class="display-6 fw-bold">Payment detail Register</h1>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        <app-payment-detail-form />
+    </div>
+    <div class="col">
+        <!-- the list is ppp which is in the service  -->
+        <!-- the service class is already injected in the payment detail component-->
+        <!-- we can use the data of it here -->
+        <ul class="group-list">
+            <li class="group-list-item d-flex bg-light justify-content-between align-items-start mb-2 px-4 py-3 border rounded-3" 
+            *ngFor="let custom of customservicename.ppplist">
+            <!-- we pass the obj of the clicked thing -->
+            <div (click)="showclickeddatatoform(custom)">
+                <div class="fw-bold">{{custom.cardOwnerName}}</div>
+            <div>{{custom.cardNumber}}</div>
+            <div class="fw-bold">{{custom.expirationDate}}</div>
+        </div>
+        <span>
+            <i class="fa-solid fa-trash fa-lg"
+            (click)="ondelete(custom.paymentDetailId)"></i> 
+        </span>
+            </li>
+        </ul>
+    </div>
+</div>

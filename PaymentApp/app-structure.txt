@@ -1,0 +1,20 @@
+/src
+│
+├── /app
+│   │
+│   ├── /payment-details
+│   │   ├── payment-details.component.ts
+│   │   ├── payment-details.component.html
+│   │   ├── /payment-detail-form
+│   │   │   ├── payment-detail-form.component.ts
+│   │   │   └── payment-detail-form.component.html
+│   │
+│   ├── /shared
+│   │   ├── payment-detail.service.ts
+│   │   └── payment-detail.model.ts
+│   │
+│   ├── app.module.ts
+│
+├── styles.css (global css rules)
+│
+└── index.html (cdn path for bootstrap & fa icons)
